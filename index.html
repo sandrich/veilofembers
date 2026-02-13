@@ -514,22 +514,15 @@
             // === MAILERLITE INTEGRATION ===
             // Uncomment and replace with your MailerLite form action URL:
             //
-            // fetch('https://assets.mailerlite.com/jsonp/YOUR_ACCOUNT/forms/YOUR_FORM_ID/subscribe', {
-            //     method: 'POST',
-            //     headers: { 'Content-Type': 'application/json' },
-            //     body: JSON.stringify({ fields: { email: email } })
-            // }).then(() => {
-            //     document.getElementById('signup-form').style.display = 'none';
-            //     document.querySelector('.signup-note').style.display = 'none';
-            //     document.getElementById('signup-success').style.display = 'block';
-            // });
-
-            // === TEMPORARY: Show success message ===
-            // Remove this block once MailerLite is connected
-            document.getElementById('signup-form').style.display = 'none';
-            document.querySelector('.signup-note').style.display = 'none';
-            document.getElementById('signup-success').style.display = 'block';
-            console.log('Signup email:', email);
+            fetch('https://assets.mailerlite.com/jsonp/2112871/forms/179316862865114412/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ fields: { email: email } })
+            }).then(() => {
+                document.getElementById('signup-form').style.display = 'none';
+                document.querySelector('.signup-note').style.display = 'none';
+                document.getElementById('signup-success').style.display = 'block';
+            });
         });
     </script>
 
