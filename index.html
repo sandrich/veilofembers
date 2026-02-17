@@ -7,7 +7,7 @@
     <meta name="description" content="Epic fantasy trilogy by C. Sandrini. A forge worker discovers the world's hidden architecture is dying — and the only tools that can save it are the ones her dead mother left behind.">
     <meta property="og:title" content="The Veil of Embers — C. Sandrini">
     <meta property="og:description" content="Three books. One covenant. A world held together by steel and stubbornness.">
-    <meta property="og:image" content="cover-book1.jpg">
+    <meta property="og:image" content="images/cover-book1.jpg">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -256,6 +256,37 @@
             font-size: 1rem;
             color: var(--text-secondary);
             font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .book-btn {
+            display: inline-block;
+            padding: 10px 24px;
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.3s, transform 0.2s;
+            margin-top: 4px;
+        }
+
+        .book-btn-buy {
+            background: var(--amber);
+            color: var(--bg-deep);
+        }
+
+        .book-btn-buy:hover {
+            background: var(--amber-glow);
+            transform: translateY(-1px);
+        }
+
+        .book-btn-soon {
+            background: transparent;
+            color: var(--text-dim);
+            border: 1px solid rgba(212, 160, 74, 0.2);
+            cursor: default;
         }
 
         .book-description {
@@ -431,23 +462,38 @@
             <div class="book-grid">
                 <div class="book-card">
                     <div class="book-cover">
-                        <img src="cover-book1.jpg" alt="Book I: The Fracture">
+                        <!-- Replace with: <img src="images/cover-book1.jpg" alt="Book I: The Fracture"> -->
+                        <div class="book-cover-placeholder">
+                            <span class="book-num">Book I</span>
+                            <span class="book-title">The Fracture</span>
+                        </div>
                     </div>
                     <p class="book-name">The Fracture</p>
+                    <a href="https://www.amazon.com/dp/B0GNSQW634" target="_blank" rel="noopener" class="book-btn book-btn-buy">Buy on Amazon</a>
                 </div>
 
                 <div class="book-card">
                     <div class="book-cover">
-                        <img src="cover-book2.jpg" alt="Book II: The Bridge">
+                        <!-- Replace with: <img src="images/cover-book2.jpg" alt="Book II: The Bridge"> -->
+                        <div class="book-cover-placeholder">
+                            <span class="book-num">Book II</span>
+                            <span class="book-title">The Bridge</span>
+                        </div>
                     </div>
                     <p class="book-name">The Bridge</p>
+                    <span class="book-btn book-btn-soon">Coming Soon</span>
                 </div>
 
                 <div class="book-card">
                     <div class="book-cover">
-                        <img src="cover-book3.jpg" alt="Book III: The Forge">
+                        <!-- Replace with: <img src="images/cover-book3.jpg" alt="Book III: The Forge"> -->
+                        <div class="book-cover-placeholder">
+                            <span class="book-num">Book III</span>
+                            <span class="book-title">The Forge</span>
+                        </div>
                     </div>
                     <p class="book-name">The Forge</p>
+                    <span class="book-btn book-btn-soon">Coming Soon</span>
                 </div>
             </div>
 
@@ -512,8 +558,6 @@
             const email = this.querySelector('input[type="email"]').value;
             
             // === MAILERLITE INTEGRATION ===
-            // Uncomment and replace with your MailerLite form action URL:
-            //
             fetch('https://assets.mailerlite.com/jsonp/2112871/forms/179316862865114412/subscribe', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
